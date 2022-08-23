@@ -1,5 +1,5 @@
 # charRotovator 4EDi
 
-###Erste Schritte
+### Erste Schritte
 
-Bevor es losgehen kann, bitte [hier](https://processing.org/download) herunter laden.
+Bevor es losgehen kann, bitte die aktuelle Version von Processing [hier](https://processing.org/download) herunter laden.
