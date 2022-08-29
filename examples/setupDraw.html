@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etwas Struktur setup() & draw()</title>
+    <link rel="stylesheet" href="/4edi/style/main.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>setup() & draw()</h1>
+            <h2>Die Funktionen setup() und draw() sind die wichtigsten Bestandteile eines Processing Sketchs. setup() wird einmalig zum Start des Programms ausgeführt. draw() wird in Dauerschleife wiederholt hier entsteht Bewegung.</h2>
+
+            <div class="fBox">
+                <article>
+                    <h3>setup()</h3>
+                    <p>Hier werden Anweisungen gemacht die für den weiteren Verlauf des Programms gültig sind.</p>
+                    <ul>
+                        <li>Größe des Programmfensters: size()</li>
+                        <li>Farbraum: colorMode()</li>
+                        <li>Dateien vorgeladen wie Schriften, Bilder und Töne</li>
+                        <li>Globale Variablen mit Anfangswerten bestückt.</li>
+                    </ul>
+
+                </article>
+                <article>
+                    <h3>draw()</h3>
+                    <p>Die Dauerschleife draw() dient nicht nur der Animation. Um die Setup-Funktion möglichst sauber zu halten, sollten alle verädnerlichen Elemente hier beschrieben werden.</p>
+                </article>
+            </div>
+        </section>
+        <section>
+            <h3>Beispiel:</h3>
+            <div class="fBox">
+                <pre>
+                    <code>
+void setup(){
+    size(640,360); 
+    colorMode(RGB,255,255,255);
+}
+
+void draw(){
+    background(0,30,50);
+    noStroke();
+    fill(255,200,50);
+    ellipse(100,130,100,100);
+}</code>
+                </pre>
+                <article>
+                    <p>In der setup-Funtion wird nach der Bildschirmgröße ausgesagt das der RGB-Farbraum verwendet werden soll und mit Werten von 0 bis 255 gfütter wird. Da dies den Default Settings entspricht kann man sich diese Aussage sparen. </p>
+                <br>
+                <p>In <strong>void draw()</strong> wird mit der Funktion <strong>background()</strong> aufgefordert den Bildschirmhintergrund mit den enthalten RGB-Werten zu füllen. Hier bedeutet das, dass der Bilschirmhintergrund mit jdem Frame neue gestrichen wird. Man könnte die Funktion auch einmal im Setup aufrufen.</p>
+                <p>Die Funktion <strong>noStroke()</strong> besagt dass alle folgenden Dinge ohne Rand gezeichnet werden.</p>
+                <p><strong>fill()</strong> sorgt dafür das die folgenden Dinge mit den enthalten RGB-Werten gefüllt werden.</p>
+            </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

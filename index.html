@@ -1,21 +1,241 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4EDi</title>
-    <link rel="stylesheet" href="style/main.css">
+	<meta charset="utf-8"/>
+	<title>charRotoSettings</title>
+	<meta name="author" content="Andreas Breitwieser"/>
+	<meta name="date" content="25.08.22"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
 </head>
+
+<header>
+  <figure>
+    <img src="img/22824_randomChars-020654.png" alt="" />
+    </figure>
+  <h1>charRotovator 4EDi</h1>
+</header>
 <body>
-    <main>
-        <section>
-            <h1>4EDi</h1>
-            <h3>Ein Lettern-Karusell</h3>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; Andres Breitwieser 2022</p>
-    </footer>
+
+
+
+<section>
+  <div class="fBox">
+    <article>
+      <p>Um den rohen Code ausführen zu können brauchst du die kostenlose <a href="https://processing.org/download">Processing App</a> und natürlich den Code von meiner <a href="https://github.com/andreas-dora/charRotovator">Github Seite</a>. Klick auf <strong>CODE</strong> und dann <strong>Download Zip</strong>. Die Dateien können auch mit Git über die Konsole geladen werden: </p>
+    
+      <pre><code>git clone https://github.com/andreas-dora/charRotovator.git </code></pre>
+      
+      <p>Das Programm-Paket enthält die App <strong>charRoto_beta</strong> und einen Ordner mit weiteren Beispielen.</p>
+      
+      
+    
+    </article>
+    <aside>
+      <dl>
+        <dt>Downloads</dt>
+        <dd><a href="https://processing.org/download">Processing App</a></dd>
+        <dd><a href="https://github.com/andreas-dora/charRotovator">Code Paket</a></dd>
+      </dl>
+      <img src="/4edi/img/gitHub.png" alt="">
+    </aside>
+  </div>
+</section>
+
+
+<hr />
+
+
+
+
+<h1>Grundlagen</h1>
+
+<div class="fBox">
+  <article>
+    <h4>Die Processing App</h4>
+  
+    <p>Die Processing App ist eine sehr leichtgewichte aber komplette Programmierumgebung. Sie dient zum Schreiben und Ausführen von Code. Fertige Programme können als Stand-Alone-Apps exportiert werden. </p>
+    
+    <p>In Processing wird ein Programm <strong>Sketch</strong> genannt. Dementsprechend findest Du in der App Menüpunkte wie <strong>Sketch starten</strong> und <strong>Sketch archivieren</strong>. Deine Dateien werden im Ordner <strong>Sketchbook</strong> gespeichert. </p>
+    
+    <p>Ein Sketch kann aus mehreren Dateien bestehen. Jeder Sketch wird in einem gleichnamigen Ordner gespeichert.
+    In der Processing App findest Du im Menüpunkt <strong>Tootls</strong> die Funktion <strong>Sketch archivieren</strong>. Der Sketch wird als Zip-Datei im jeweiligen Sketch-Ordner gespeichert. Das ist sehr praktisch falls man sich mal etwas kaputt schreibt.</p>
+    
+    <p>In der App findest Du unter dem Menüpunkt <strong>Datei</strong> recht große Auswahl von <strong>Bespielen</strong> zu verschiedenen Themen.</p>
+    
+  </article>
+  <aside>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2VLaIr5Ckbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </aside>
+</div>
+<hr />
+
+<h2>Schreibweise</h2>
+<div class="fBox">
+  <pre><code>float x = 200;
+float y;
+int r = 50;
+float xSpeed = 2.4;
+
+void setup(){ 
+  size(640, 360); 
+  y = height / 2;
+}
+
+void draw(){
+  background(0, 100, 200);
+  fill(255, 200, 50);
+  ellipse(x, y, 100, 100);
+  x = x + xSpeed;
+  if ( x &gt; width  + r){
+    x = - r;
+  }
+}
+    </code></pre>
+
+    <article>
+      <h4>Groß- und Kleinschreibung</h4>
+
+      <p>Groß- und Kleinschreibung sind genau zu beachten. Der Wert einer Variable klein <strong>y</strong> kann nicht mit groß <strong>Y</strong> abgerufen werden. </p>
+      
+      <hr />
+      
+      <h4>Semikolon</h4>
+      
+      <p>Jede Anweisung wird mit einem Semikolon beendet. </p>
+      
+      <code>background(0, 100, 200);</code><br>
+      <code>fill(255, 200, 50);</code>  <br>
+       <code>ellipse(x, y, 100, 100);</code><br>
+     
+      
+      <hr />
+      
+      <h4>Kommata</h4>
+      
+      <p>Kommata trennen Werte. Die Funktion <code>size(640,360);</code> erzeugt ein Programmfenster mit 640 Pixeln breite und 360 Pixeln höhe.
+      Komma-Zahlen werden dem englischen Begriff und der Schreibweise entsprechend als <strong>Floating Point Numbers</strong> mit einem Punkt als Trennzeichen geschrieben: <code>float xSpeed = 2.4;</code></p>
+
+    </article>
+</div>
+<hr />
+<h4>Einrückungen</h4>
+   <article>
+    <p>Einrückungen sogenannte Indentations haben in Java und damit auch Processing keinen Einfluss auf das Programm. Einrückungen, Leerzeichen und Zeilenumbrüche dienen ausschließlich der besseren Lesbarkeit. Der oben stehende Code könnte auch so zusammen gefasst werden:</p>
+<pre><code>float x=200;float y;int r=50;float xSpeed=2.4;
+void setup(){size(640,360);y=height/2;}
+void draw(){background(0,100,200);fill(255,200,50);ellipse(x,y,2*r,2*r);
+x=x+xSpeed;if(x&gt;width+r){x=-r;}}</code></pre>
+  </article>   
+<hr />
+<section>
+  <h2>Kommentare</h2>
+  <div class="fBox">
+    <article>
+
+      <p>Kommentare sind Teile des Codes die nicht ausgeführt werden. Mit Kommentaren können Erklärungen und Informationen hinterlassen werden.
+        Kommentare ermöglichen
+        Außerdem ermöglichen Kommentare Veränderungen im Code ausprobieren ohne, dass man etwas löschen muss.
+        Zwischen <code>/*</code>und <code>*/</code> werden mehrzeilige Kommentare gesetzt.
+        <code>//</code>Doppel-Slash Kommentiert bis zum nächsten Zeilenumbruch aus. Es wird lediglich der Teil Hinter dem Doppel-Slash ignoriert: <code>int r = 50; // r = Radius</code> </p>
+        
+    </article>
+    <aside>
+<pre><code>/* 
+Die neue If-Bedingung 
+lässt den Ball abprallen 
+und wieder umkehren 
+*/
+
+float x = 200;
+float y;
+int r = 50; // r = Radius
+float xSpeed = 2.4;
+  
+void setup(){
+//  size(360,640);
+  size(640,360); 
+  y = height / 2;
+}
+
+void draw(){
+  background(0, 100, 200);
+  noStroke();
+  fill(255, 200, 50);
+  ellipse(x,y,r*2,r*2);
+  x = x +xSpeed;
+  /*
+  if(x &gt; width+r){
+    x = -r;
+  }
+  */
+  if((x &gt;= width - r) || (x &lt; 0 + r)){
+    xSpeed = xSpeed * -1;
+  }
+}
+</code></pre>
+        
+    </aside>
+  </div>
+</section>
+
+
+
+<hr />
+
+<h1>Voreinstellungen</h1>
+
+<h3>Dateiformat</h3>
+
+<p>Bevor Du loslegen kannst sollten ein paar Voreinstellungen gemacht werden. In der aktuellen Version besteht das Programm aus drei Dateien, in in der Processing App als drei Tabs dargestellt werden.
+Der erste Tab heißt genau so, wie die aktuelle Version des Programms. Alle Voreinstellung sind hier zu erledigen.
+Zu Beginn tauchen zwei Zeilen auf: </p>
+
+<pre><code>String saveFormat = &quot;png&quot;;
+String myPath = &quot;&quot;;
+</code></pre>
+
+<p>Die Zeile <strong>saveFormat</strong> gibt das Dateiformat für die einfache Bildspeicherung <strong>saveFrame()</strong> vor. Neben &#8216;png&#8217; sind &#8216;tif&#8217;, &#8216;tga&#8217; und &#8216;jpg&#8217; möglich. </p>
+
+<hr />
+
+<h3>Speicherpfad</h3>
+
+<p>In der Zeile <strong>myPath</strong> gibst Du an, wo deine Bilder gespeichert werden sollen. Bleibt Die Zeile leer werden Bilder direkt neben den Programmdateien gespeichert. Bei einem Update des Programmordners würden sie dort verloren gehen. Dateipfade werden in Anführungszeichen angegeben.</p>
+
+<pre><code>String myPath = &quot;/Users/andi/Desktop/screenShots/&quot;; 
+</code></pre>
+
+<p>Auf dem Mac kannst Du mit Hilfe der <strong>Terminal App</strong> ganz einfach einen Dateipfad ermitteln. Die App findest Du unter Programme -&gt; Andere.<br/>
+Du brauchst nur den gewünschten Ordner auf die Terminal App zu ziehen schon bekommst Du den Pfad ausgegeben. </p>
+
+<hr />
+
+<h3>Bildschirmauflösung</h3>
+
+<p>Weiter gehts es etwa bei Zeile 30, innerhalb der Setup-Funktion. </p>
+
+<pre><code>pixelDensity(1);
+</code></pre>
+
+<p>Bei der Benutzung eines hochauflösenden Displays wie kann <strong>pixelDensity</strong> auf <strong>2</strong> gesetzt werden. Bei werden einem 13&quot; Macbook werden so vom Bildschirm Dateien mit 2880 x 1800 Pixeln gerendert.</p>
+
+<hr />
+
+<h3>Font laden</h3>
+
+<pre><code>mainFont = createFont(&quot;HelveticaNeue-Light&quot;,200);
+</code></pre>
+
+<p>Hier kann nun ein Wunsch-Font geladen werden. Die Funktion <strong>createFont()</strong> erwartet neben dem Dateiname auf jeden Fall auch eine Größe. Dateinamen werden wie Pfade in Anführungszeichen gesetzt. </p>
+
+<figure>
+<img src="img/courierH.png" alt="" />
+</figure>
+
+<p>`</p>
+
 </body>
 </html>

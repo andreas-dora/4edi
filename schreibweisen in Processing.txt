@@ -1,0 +1,108 @@
+title: schreibweisen in Processing
+author: Andreas Breitwieser
+
+## Schreibweise
+ 
+ ```
+float x = 200;
+float y;
+int r = 50;
+float xSpeed = 2.4;
+
+void setup(){ 
+  size(640, 360); 
+  y = height / 2;
+}
+
+void draw(){
+  background(0, 100, 200);
+  fill(255, 200, 50);
+  ellipse(x, y, 100, 100);
+  x = x + xSpeed;
+  if ( x > width  + r){
+    x = - r;
+  }
+}
+```
+ 
+ 
+#### Groß- und Kleinschreibung
+
+Groß- und Kleinschreibung sind genau zu beachten. Der Wert einer Variable klein `y` kann nicht mit groß `Y` abgerufen werden.  
+
+---
+
+#### Semikolon 
+
+Jede Anweisung wird mit einem Semikolon beendet. 
+
+```
+  background(0, 100, 200);
+  fill(255, 200, 50);
+  ellipse(x, y, 100, 100);
+  ```
+  
+ ---
+
+#### Kommata 
+Kommata trennen Werte. Die Funktion `size(640,360);` erzeugt ein Programmfenster mit 640 Pixeln breite und 360 Pixeln höhe. Die Funktionen `background(0, 100, 200)`und `fill(255, 200, 50)`enthalten hier Werte zwischen 0 und 255 für Rot, Grün und Blau.
+Komma-Zahlen werden dem englischen Begriff und der Schreibweise entsprechend als **Floating Point Numbers** mit einem Punkt als Trennzeichen geschrieben: `float xSpeed = 2.4;`
+
+---
+
+#### Einrückungen
+Einrückungen sogenannte Indentations haben in Java und damit auch Processing keinen Einfluss auf das Programm. Einrückungen, Leerzeichen und Zeilenumbrüche dienen ausschließlich der besseren Lesbarkeit. Der oben stehende Code könnte auch so zusammen gefasst werden:
+
+```
+float x=200;float y;int r=50;float xSpeed=2.4;
+void setup(){size(640,360);y=height/2;}
+void draw(){background(0,100,200);fill(255,200,50);ellipse(x,y,2*r,2*r);
+x =x+xSpeed;if(x>width+r){x=-r;}}
+```
+
+---
+
+
+#### Kommentare 
+
+Kommentare sind Teile des Codes die nicht ausgeführt werden. Mit Kommentaren können Erklärungen und Informationen hinterlassen werden.
+Kommentare ermöglichen 
+Außerdem ermöglichen Kommentare Veränderungen im Code ausprobieren ohne, dass man etwas löschen muss.
+Zwischen `/*`und `*/` werden mehrzeilige Kommentare gesetzt.
+`//`Doppel-Slash Kommentiert bis zum nächsten Zeilenumbruch aus. Es wird lediglich der Teil Hinter dem Doppel-Slash ignoriert: `int r = 50; // r = Radius` 
+
+```
+/* 
+Die neue If-Bedingung 
+lässt den Ball abprallen 
+und wieder umkehren 
+*/
+
+float x = 200;
+float y;
+int r = 50; // r = Radius
+float xSpeed = 2.4;
+  
+void setup(){
+//  size(360,640);
+  size(640,360); 
+  y = height / 2;
+}
+
+void draw(){
+  background(0, 100, 200);
+  noStroke();
+  fill(255, 200, 50);
+  ellipse(x,y,r*2,r*2);
+  x = x +xSpeed;
+ /*
+  if(x > width+r){
+    x = -r;
+  }
+  */
+  if((x >= width - r) || (x < 0 + r)){
+    xSpeed = xSpeed * -1;
+  }
+}
+```
+

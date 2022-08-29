@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 110%;
+ background-color: #f3f3f3;
+}
+
+pre{
+    background-color: #434343;
+    padding: 10px;
+}
+code{
+    background-color: #434343;
+    color: snow;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+
+a{
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5.h6{
+    font-family: 'Cairo', sans-serif;
+
+}
+h1{
+    font-size: clamp(3em,7vw,8em );
+    margin-bottom: 1em;
+}
+h2{
+    margin-bottom: 1em;
+
+}
+h4{
+    margin-bottom: 1em;
+}
+p{
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: .5em;
+    max-width: 70ch;
+}
+
+hr{
+    margin-top: 1em;
+    margin-bottom: 1.4em;
+}
+
+article{
+    min-width: 320px;
+    width: 64%;
+    padding: 1em;
+    flex: 2;
+}
+aside{
+    min-width: 320px;
+    flex: 1;
+}
+
+.fBox{
+    display: flex;
+    gap: 1em;
+}
+img{
+    max-width: 100%;
+}

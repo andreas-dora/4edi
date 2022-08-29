@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globale und Lokale Variablen</title>
+    <link rel="stylesheet" href="/4edi/style/main.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Dinge Bewegen</h1>
+            <h2></h2>
+
+
+            <div class="fBox">
+                <article>
+                   <p>In einer einefachen Zweidimensionalen Welt werden Dingen, wie eine Ellipse, in einem Programmfenster positioniert in dem man ihnen Werte auf der y- und x-Achse zuschreibt. 
+                       Um so eine Ellipse in Bwegung zu bringen muss man wenigsten einen dieser Werte verändern. Kontinuierliche Veränderung sorgt dann für kontinuierliche Bewegung.
+                   Ein gesetzter Anfangswert <strong>x = 20;</strong> kann mit jedem Durchlauf des Draw-Loops um einen gewünschten Wert erhöht werden.</p>
+                <br>
+                <p>Damit x nicht mit jedem Durchlauf des Draw-Loops auf den Ausgangswert (20) zurück gesetzt wird, muss diese Initialisierung außerhalb erfolgen.</p>
+                <p>Variablen die innerhalb einer Funktion initialisiert werden, stehen nur lokal in dieser Funktion zur Verfügung. Sie sind für den Rest des Codes nicht nicht zugänglich. Damit die Variablen x und y in der Draw-Funktion verwendet verwendet werden können.
+                    müssen sie vor der Setup-Funktion initiert werden. Damit stehen sie global für alle Teile des Programms zur verfügung.
+                </p>
+                </article>
+                <aside>
+                    <code>x = 20;</code><br>
+                    <code>y = 40;</code><br> 
+                    <code>ellipse(x,y,100,100);</code><br>
+                   <code> x = x +2.4; </code><br> 
+                </aside>
+          
+
+        </section>
+        <section>
+            <h3>Variablen Initieren</h3>
+            <div class="fBox">
+               <article>
+                   <p>Mit dem Zauberwort <strong>float()</strong> vom englischen Floating Point Numbers werden Kommazahlen initiert. Einer Variable kann direkt beim initieren ein Wert zugewiesen werden (siehe x). Dies kann aber auch nachgeholt werden (siehe y).
+                </p>
+                <p>Bevor eine Variable benutzen  werden kann muss sie mit dem Zauberwort für den entsprechenden Datentyp initiert werden. Für Kommazahlen engl. Floating Point Numbers ist das Zauberwort <strong>float</strong>. 
+                    Der Datentyp für ganze Zahlen <strong>int</strong> von englisch Integer kann keine Kommazahlen enthalten. Man kann einer Integer einmal 0.5 hinzufügen.</p>
+                
+
+                    
+
+               </article>
+               <aside>
+                <table>
+                    <tHead><th>  </th><th>Einfache Datentypen</th></tHead>
+                    <tBody>
+                     <tr><th>int</th><td>Ganze natürliche Zahlen</td></tr>
+                     <tr><th>float</th><td>Fließkommazahlen von xxx bis</td></tr>
+                     <tr><th>double</th><td>Fließkommazahlen von bis cxcxcx</td></tr>
+                     <tr><th>boolean</th><td>Einfach Entweder / Oder-Werte </td></tr>
+                     <tr><th>String</th><td>Zeichenketten: Worte, Sätze aber auch Dateipfade</td></tr>
+                     <tr><th>char</th><td>Einzelne Zeichen, Buchstaben, Zahlem</td></tr>
+                    </tBody>
+                </table>
+                
+               </aside>
+            </div>
+        </section>
+
+        <section>
+            <div class="fBox">
+                <article>
+                 <h3>Lokale Variablen</h3>
+                 <p>Werden Variablen innerhalb von einer Funktion initiert, können die auch nur innerhalb dieser Funktion aufgerufen werden. Man spricht von Lokalne Variablen. Außerhalb der Funktion bleiben diese unbekannt. Dies gilt auch für die Funktionen setup() und draw().</p>
+                </article>
+                <aside>
+                 
+                </aside>
+            </div>
+        </section>
+
+        <section>
+            <h3>Im Loop kleben bleiben</h3>
+            <div class="fBox">
+                <article>
+                    <p>Möchte man eine Ellipse über die Veränderung der x-Position im Draw-Loop animieren, kann man sie nicht dort innitieren.  
+                        Sonst geschiet bei jedem Durchlauf folgendes: <br>
+                        Die Ellipse startet von x = 4 <br>
+                        Sie wird anschließend um 2.2 nach rechts verschoben <br>
+                        Der Loop startet von neu. Die Ellipse wird wieder auf 4 zurückgesetzt. <br>
+                    Die Funktion println() gibt das Gezappel in der Konsole aus. </p>
+                    <p>Auch wenn x nur im Draw-Loop benutzt wird, kann er hier nicht Initiert werden. Sonst bleiben wir kleben. </p>
+                </article>
+<aside>
+                    <pre>
+<code><span class="codeL">void</span>  <span class="codeF">setup</span>(){
+    <span class="codeF">size</span>(640,360); 
+}
+<span class="codeL">void</span> <span class="codeF">draw</span>(){
+    <span class="codeClass">float</span> x = 4;
+    <span class="codeClass">float</span> y = height / 2;
+    <span class="codeClass">float</span> xSpeed = 2.2; 
+    <span class="codeF">ellipse</span>(x,y,100,100);
+    x = x + xSpeed;
+    <span class="codeF">println</span>(x);  
+}</code>
+</pre>
+ </aside>
+            </div>
+        </section>        
+        <section>
+            <h3>Los geht's</h3>
+            <div class="fBox">
+                <article>
+                    
+                    <p>Wird eine Variable vor der Setup-Funktion initiert, ist diese global verfügbar und kann von allen Teilen des Programms benutzt werden. Einer Variable kann direkt beim initieren ein Wert zugewiesen werden (siehe x). Dies kann aber auch nachgeholt werden (siehe y).</p>
+                     
+                        <p> Nachdem innerhalb von <strong>setup()</strong> mit <strong>size()</strong> oder der Funktion <strong>fullScreen()</strong> die Größe des Programmfensters festgelegt wurde, 
+                            stehen daraufhin Werte für Fensterbreite (width) und Fensterhöhe (height) zur Verfügung. <br>
+                            <strong>y</strong> kann nun der Wert für halbe Fensterhöhe (height / 2) zugewiesen werden.</p>
+<br>
+<p>innerhalb von Draw sorgt die Funktion <strong>background()</strong> dafür, dass der Hintergrund mit jedem Frame neu gezeichnet wird und alte Positionierungen somit verschwinden. </p>
+<p>Die Ellipse wird auf die neuste x-Position gezeichnet. Mit jedem Frame wird x um den Wert von xSpeed erhöht, bis die in <strong>if()</strong> formulierte Umkehrbedingung erfüllt ist. </p>
+<p>Sobald x den beschriebenen Grenzwert (Programmfenster-Breite +  Ellipsen-Radius) erreicht und damit rechts aus dem Bild verschwindet, wird x zurück gesetzt auf 'Minus Ellipsenradius' und taucht dann von Links wieder ins Bild ein. </p>
+
+<br>
+ <p> Die Funktion <strong>println()</strong> ist ein Hilfsmittel zur Fehlersuche. Sie gibt gewünschte Were an die Konsole unterhalb des Code-Fensters in der Processing App aus.</p>   
+   </article>
+                <aside>
+                    <pre>
+<code><span class="codeClass">float</span> x = 4;
+<span class="codeClass">float</span> y;
+
+<span class="codeL">void</span>  <span class="codeF">setup</span>(){
+    <span class="codeF">size</span>(640,360); 
+    y = <span class="codePink">height</span> / 2;
+}
+
+<span class="codeL">void</span> <span class="codeF">draw</span>(){
+    <span class="codeClass">float</span> xSpeed = 0.2; // Geschwindigkeit
+    <span class="codeClass">int</span> r = 50; // Radius
+    <span class="codeF">background</span>(0,30,50);
+    <span class="codeF">noStroke</span>();
+    <span class="codeF">fill</span>(255,200,50);
+    <span class="codeF">ellipse</span>(x,y,r*2,r*2);
+    x = x + xSpeed;
+    <span class="codeL">if</span>(x >= <span class="codePink">width </span> +r){
+        x = -r;
+    }
+    <span class="codeF">println</span>(x);
+}</code>
+                    </pre>
+                </aside>
+            </div>
+        </section>
+        
+ 
+
+    </main>
+</body>
+</html>
