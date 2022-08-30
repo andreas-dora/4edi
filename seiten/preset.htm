@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schreibweisen in Processing</title>
+	<meta name="author" content="Andreas Breitwieser"/>
+	<meta name="date" content="25.08.22"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/4edi/style/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav">
+            <a href="/4edi/index.html">Home</a>
+        </div>
+    </nav>
+    <main>
+ <section>
+    <h1>Voreinstellungen</h1>
+    <div class="fBox">
+        <article>
+
+            <p>Bevor Du loslegen kannst sollten ein paar Voreinstellungen gemacht werden. In der aktuellen Version besteht das Programm aus drei Dateien, in in der Processing App als drei Tabs dargestellt werden.
+                Der erste Tab heißt genau so, wie die aktuelle Version des Programms. Alle Voreinstellung sind hier zu erledigen. Zu Beginn tauchen zwei Zeilen auf:</p>
+            
+                    </article>
+                    <aside></aside>
+    </div>
+    <section>
+        <h3>Speicherformat</h3>
+        <div class="fBox">
+            <article>
+            
+                <p>Die Zeile <strong>saveFormat</strong> gibt das Dateiformat für die einfache Bildspeicherung <strong>saveFrame()</strong> vor. Neben &#8216;png&#8217; sind &#8216;tif&#8217;, &#8216;tga&#8217; und &#8216;jpg&#8217; möglich. </p>
+    
+            </article>
+            <aside>
+<pre><code>String saveFormat = &quot;png&quot;;
+String myPath = &quot;&quot;;</code></pre>
+            </aside>
+        </div>
+    </section>
+<hr>
+<section>
+    <h3>Speicherpfad</h3>
+    <div class="fBox">
+<article>
+    <p>In der Zeile <strong>myPath</strong> gibst Du an, wo deine Bilder gespeichert werden sollen. Bleibt Die Zeile leer werden Bilder direkt neben den Programmdateien gespeichert. Bei einem Update des Programmordners würden sie dort verloren gehen. Dateipfade werden in Anführungszeichen angegeben.</p>
+<pre><code>String myPath = &quot;/Users/andi/Desktop/screenShots/&quot;;</code></pre>
+   </article>
+
+<aside>
+    <p>Auf dem Mac kannst Du mit Hilfe der <strong>Terminal App</strong> ganz einfach einen Dateipfad ermitteln. Die App findest Du unter Programme -&gt; Andere.<br/>
+        Du brauchst nur den gewünschten Ordner auf die Terminal App zu ziehen schon bekommst Du den Pfad ausgegeben. </p>
+
+    
+</aside>
+</div>
+
+
+
+</section>
+<hr>
+<section>
+    <h3>Bildschirmauflösung</h3>
+
+    <div class="fBox">
+<article>
+    <p>Weiter gehts es etwa bei Zeile 30, innerhalb der Setup-Funktion. </p>
+</article>
+<aside>
+<pre><code>pixelDensity(1);</code></pre>
+</aside>
+    </div>
+    <article>
+        <p>Bei der Benutzung eines hochauflösenden Displays wie kann <strong>pixelDensity</strong> auf <strong>2</strong> gesetzt werden. Bei werden einem 13&quot; Macbook werden so vom Bildschirm Dateien mit 2880 x 1800 Pixeln gerendert.</p>
+
+    </article>
+</section>
+
+<hr />
+<section>
+    <h3>Font laden</h3>
+    <div class="fBox">
+<article>
+    <p>Hier kann nun ein Wunsch-Font geladen werden. Die Funktion <strong>createFont()</strong> erwartet neben dem Dateiname auf jeden Fall auch einen Wert zur Schriftgröße. Dateinamen werden wie Pfade in Anführungszeichen gesetzt. </p>
+
+</article>
+<aside>
+<pre><code>mainFont = createFont(&quot;HelveticaNeue-Light&quot;,200);</code></pre>
+</aside>
+    </div>
+</section>
+
+<section>
+    <h3>Schriftgröße min/max</h3>
+    <div class="fBox">
+        <article>
+            <p>Etwa bei Zeile 56 geht es weiter mit Angaben für die minimale und anschließend maximale Schriftgröße. Hier muss man sich unter Umständen ein wenig heran tasten. </p>
+        </article>
+        <aside>
+<pre><code>minFSize = 160;
+maxFSize = longSide *1.5;</code></pre>
+        </aside>
+    </div>
+
+
+    
+</section>
+
+
+
+
+
+
+
+<hr />
+<section>
+    <h3>Sättigung und Helligkeit der Farben</h3>
+<div class="fBox">
+    <article>
+        <p>Die App verwendet den HSB-Farbraum (Hue, Saturation, Brightness).
+            Während der Wert für den Farbton <strong>Hue</strong> zufällig bestimmt wird, werden Sättigung und Helligkeit hier über <strong>mySatur</strong> und <strong>myBright</strong> vorgegeben. Beide Variablen akzeptieren Werte zwischen 0 und 99.</p>
+            
+    </article>
+    <aside>
+<pre><code>mySatur = 76;
+myBright = 80;</code></pre>
+    </aside>
+</div>
+</section>
+<section>
+    <h3>Transparenz</h3>
+<div class="fBox">
+    <article>
+        <p>Mit den letzten Beiden Werten werden die Unter- und Obergrenze für den Alpha-Kanal also die transparenz vorgegeben. Beide Variablen akzeptieren Werte zwischen 0 und 99.</p>
+    </article>
+    <aside>
+<pre><code>minAlpha = 92;
+maxAlpha = 99;</code></pre>
+    </aside>
+</div>
+</section>
+
+<section>
+    <h2>Der Code</h2>
+<pre><code>
+    /* 
+- Schnappschuss speichern(.png) speichern = CONTROL + p (Vor dem ersten Benutzen Pfad anlegen)
+- Letzte Eingabe wiederufen = CONTROL + z
+- Alles weg pinseln = n CONTROL + n
+- Hilfe = CONTROL + h
+*/
+import java.util.*;
+
+String saveFormat = "png"; // <----------------------- Dateiformat
+String myPath = ""; //<------------------------------- Dateipfad
+//String myPath = "/Users/andi/Desktop/screenShots/";
+
+String fileDate;
+String helpText = "CONTROL + h = Hilfe zeigen / verbergen\nCONTROL + z = Letzte Eingabe löschen\nCONTROL + n = Alle Eingaben löschen\nCONTROL + p = Bild speichern";
+boolean help;
+PFont mainFont;
+PFont courier;
+
+int fSize;
+int helpX;
+
+float longSide;
+float minFSize; float maxFSize;
+int minAlpha; int maxAlpha;
+int mySatur;
+int myBright;
+List<TextFrame> tFr = new ArrayList<TextFrame>(); 
+
+color[] pSmith = {#000000,#465040,#C8D5BC,#EFD8D2,#FDB94B,#DF4C6C,#57324C,#57324C,#80A6AF,#469FA3,#F0EEDF};
+color[] blues ={#000000, #2E5298, #332DFA, #29A27D, #9DFFB5, #465040, #57324C, #80A6AF, #469FA3, #FDB94B,#DF4C6C,#F0EEDF};
+color[] webFavs ={#000000, #034f67, #e6e1dc, #77212e, #373434, #9B2335, #f9423a, #4244b6,#a6966c,#3e3d3d,#f0e68c};
+
+/* ###################################################*/
+/* ###################################################*/
+/* ###################################################*/
+
+void setup(){
+  fullScreen();
+  pixelDensity(1); // <--------------------------------- Pixel dichte 
+  courier = createFont("Courier",100);
+  mainFont = createFont("Luckiest Guy",200); //<-------- Schrift laden
+
+  textAlign(CENTER,CENTER);
+  colorMode(HSB,359,99,99,99);
+  if(width > height){
+    longSide = width;
+  } else {
+    longSide = height;
+  }
+fileDate = str(year()-2000) + str(month()) +str(day()) + "_";
+
+help = false;
+
+minFSize = 160;  // <-------------------------- Fontsize min
+maxFSize = longSide *1.5; // <----------------- Fontsize max
+
+mySatur = 76; // <---------------------------- Sättigung
+myBright = 80; //<---------------------------- Helligkeit
+minAlpha = 92; //<---------------------------- Transparenz min
+maxAlpha = 99; //<---------------------------- Transparenz max
+
+helpX = 0;  
+}
+
+/* ###################################################*/
+/* ###################################################*/
+/* ###################################################*/
+
+void draw(){
+  textAlign(CENTER,CENTER);
+  rectMode(CORNER);
+  background(webFavs[2]);
+   for(int i = 0; i < tFr.size(); i++){  
+   TextFrame textFr = tFr.get(i);
+   textFr.show();   
+  }
+  
+  if(help){
+    helpX = 0;
+  } else {
+    helpX = - width;
+  }
+  
+    fill(#000000,70);
+    rect(helpX,30,width/2,height-60);
+    fill(webFavs[6]);
+    textAlign(LEFT,BASELINE);
+    textFont(courier,width/70);
+    text("Tastaturbefehle:",helpX +30,90);
+    
+    text(helpText ,helpX +30,140);
+    text("mouseX = " + mouseX, helpX+30, (height/3)-30);
+    text("mouseY = " + mouseY, helpX+30, (height/3));  
+}
+</code></pre>    
+</section>
+    </main>
+</body>
+</html>

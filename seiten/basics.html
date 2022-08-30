@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schreibweisen in Processing</title>
+	<meta name="author" content="Andreas Breitwieser"/>
+	<meta name="date" content="25.08.22"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/4edi/style/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav">
+            <a href="/4edi/index.html">Home</a>
+        </div>
+    </nav>
+    <main>
+        <h2>Schreibweise</h2>
+<div class="fBox">
+  <pre><code>float x = 200;
+float y;
+int r = 50;
+float xSpeed = 2.4;
+
+void setup(){ 
+  size(640, 360); 
+  y = height / 2;
+}
+
+void draw(){
+  background(0, 100, 200);
+  fill(255, 200, 50);
+  ellipse(x, y, 100, 100);
+  x = x + xSpeed;
+  if ( x &gt; width  + r){
+    x = - r;
+  }
+}
+    </code></pre>
+
+    <article>
+      <h4>Groß- und Kleinschreibung</h4>
+
+      <p>Groß- und Kleinschreibung sind genau zu beachten. Der Wert einer Variable klein <strong>y</strong> kann nicht mit groß <strong>Y</strong> abgerufen werden. </p>
+      
+      <hr />
+      
+      <h4>Semikolon</h4>
+      
+      <p>Jede Anweisung wird mit einem Semikolon beendet. </p>
+      
+      <code>background(0, 100, 200);</code><br>
+      <code>fill(255, 200, 50);</code>  <br>
+       <code>ellipse(x, y, 100, 100);</code><br>
+     
+      
+      <hr />
+      
+      <h4>Kommata</h4>
+      
+      <p>Kommata trennen Werte. Die Funktion <code>size(640,360);</code> erzeugt ein Programmfenster mit 640 Pixeln breite und 360 Pixeln höhe.
+      Komma-Zahlen werden dem englischen Begriff und der Schreibweise entsprechend als <strong>Floating Point Numbers</strong> mit einem Punkt als Trennzeichen geschrieben: <code>float xSpeed = 2.4;</code></p>
+
+    </article>
+</div>
+<hr />
+<h4>Einrückungen</h4>
+   <article>
+    <p>Einrückungen sogenannte Indentations haben in Java und damit auch Processing keinen Einfluss auf das Programm. Einrückungen, Leerzeichen und Zeilenumbrüche dienen ausschließlich der besseren Lesbarkeit. Der oben stehende Code könnte auch so zusammen gefasst werden:</p>
+<pre><code>float x=200;float y;int r=50;float xSpeed=2.4;
+void setup(){size(640,360);y=height/2;}
+void draw(){background(0,100,200);fill(255,200,50);ellipse(x,y,2*r,2*r);
+x=x+xSpeed;if(x&gt;width+r){x=-r;}}</code></pre>
+  </article>   
+<hr />
+<section>
+  <h2>Kommentare</h2>
+  <div class="fBox">
+    <article>
+
+      <p>Kommentare sind Teile des Codes die nicht ausgeführt werden. Mit Kommentaren können Erklärungen und Informationen hinterlassen werden.
+        Kommentare ermöglichen
+        Außerdem ermöglichen Kommentare Veränderungen im Code ausprobieren ohne, dass man etwas löschen muss.
+        Zwischen <code>/*</code>und <code>*/</code> werden mehrzeilige Kommentare gesetzt.
+        <code>//</code>Doppel-Slash Kommentiert bis zum nächsten Zeilenumbruch aus. Es wird lediglich der Teil Hinter dem Doppel-Slash ignoriert: <code>int r = 50; // r = Radius</code> </p>
+        
+    </article>
+    <aside>
+<pre><code>/* 
+Die neue If-Bedingung 
+lässt den Ball abprallen 
+und wieder umkehren 
+*/
+
+float x = 200;
+float y;
+int r = 50; // r = Radius
+float xSpeed = 2.4;
+  
+void setup(){
+//  size(360,640);
+  size(640,360); 
+  y = height / 2;
+}
+
+void draw(){
+  background(0, 100, 200);
+  noStroke();
+  fill(255, 200, 50);
+  ellipse(x,y,r*2,r*2);
+  x = x +xSpeed;
+  /*
+  if(x &gt; width+r){
+    x = -r;
+  }
+  */
+  if((x &gt;= width - r) ||
+   (x &lt; 0 + r)){
+    xSpeed = xSpeed * -1;
+  }
+}
+</code></pre>
+        
+    </aside>
+  </div>
+</section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+### Schriftgröße min/max
+
+Etwa bei Zeile 56 geht es weiter mit Angaben für die minimale und anschließend maximale Schriftgröße. Hier muss man sich unter Umständen ein wenig heran tasten. 
+
+
+```
+minFSize = 160;
+maxFSize = longSide *1.5;
+```
+
+---
+
+### Sättigung und Helligkeit der Farben
+
+Die App verwendet den HSB-Farbraum (Hue, Saturation, Brightness).
+Während der Wert für den Farbton **Hue** zufällig bestimmt wird werden Sättigung und Helligkeit hier über **mySatur** und **myBright** vorgegeben. Beide Variablen akzeptieren Werte zwischen 0 und 99.
+
+```
+mySatur = 76;
+myBright = 80;
+```
+
+### Transparenz 
+
+Mit den letzten Beiden Werten werden die Unter- und Obergrenze für den Alpha-Kanal also die transparenz vorgegeben. Beide Variablen akzeptieren Werte zwischen 0 und 99.
+
+minAlpha = 92;
+maxAlpha = 99;
+```

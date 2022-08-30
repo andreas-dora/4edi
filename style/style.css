@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+    width: 100%;
  font-family: Arial, Helvetica, sans-serif;
  font-size: 110%;
  background-color: #f3f3f3;
@@ -51,21 +52,46 @@ hr{
     margin-bottom: 1.4em;
 }
 
+.fBox{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
 article{
     min-width: 320px;
-    width: 64%;
     padding: 1em;
     flex: 2;
 }
 aside{
-    min-width: 320px;
+    min-width: 560px;
     flex: 1;
 }
 
-.fBox{
-    display: flex;
-    gap: 1em;
-}
+
 img{
     max-width: 100%;
+}
+iframe{
+    max-width: 100%;
+}
+
+nav{
+    width: 100%;
+    background-color: #434343;
+    padding:10px 8px  0 10px ;
+}
+.nav{
+    width: 98%;
+}
+
+.nav a{
+    color:whitesmoke;
+    padding: 10px 10px;
+}
+
+.nav a:hover{
+    background-color: #f3f3f3;
+    color: black;
+
+
 }
