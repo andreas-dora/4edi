@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    min-height: 100vh;
+    background-color: #e8cdc7;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+}
+.content{
+    width: 100%;
+    background-color: #5e334f;
+    padding: 130px 100px;
+    border-radius: 100%;
+    margin: 10vh auto;
+    box-shadow: -40px 40px #2aa5a8;
+}
+h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    /* color: #5e334f; */
+    color: #eb3b68;
+    font-size: clamp(3rem, 1rem + 6vw, 10rem);
+    line-height: .8;
+    
+}

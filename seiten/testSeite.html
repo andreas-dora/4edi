@@ -32,8 +32,9 @@
     <aside>
         <h3>Seitenfenster</h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis earum, sunt in perferendis odio ex id eveniet exercitationem magnam eligendi excepturi praesentium voluptatum amet ad distinctio, ab iste qui repellendus cupiditate ipsa laboriosam! Nemo optio similique aut commodi saepe sed.</p>
-        
-        <dl>
+        <br>
+        <dl><dt>Seiten</dt>
+            <dd>Schau mal</dd>
             <dd><a href="/4edi/seiten/basics.html">Schreibweisen</a></dd>
             <dd><a href="/4edi/seiten/preset.htm">Voreinstellungen</a></dd>
             <dd><a href="/4edi/seiten/testSeite.html">Testseite</a></dd>
@@ -44,6 +45,69 @@
 
 </section>
 <hr>
+<section>
+    
+    <div class="fBox">
+
+        <article>
+            <h3>Paint a Pixel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae odio incidunt nam dolores maiores unde cum quidem quisquam doloribus, earum molestiae eos vel! Maxime explicabo ea laborum odio impedit pariatur.</p>
+        </article>
+        <aside class="code">
+            <pre><code>
+/* 
+Control + p = Bild Speichern
+Control + n =  NEU :)
+*/
+
+float d = 20;
+
+void setup(){
+// size(640, 480);
+    fullScreen();
+//   pixelDensity(2); 
+
+    surface.setTitle("Paint a Pixel");
+    background(240,240,200);
+    cursor(CROSS);
+}
+
+void draw(){
+    if(mousePressed){
+        ellipse(mouseX,mouseY,d,d);
+    }
+}
+
+void keyReleased(){
+    if(int(key) == 16){
+        saveFrame( "paint-######.png");
+    }
+    if(int(key) == 14){ 
+        background(240,240,200);
+    }; 
+}     
+            </code></pre>
+        </aside>
+    </div>
+</section>
+<hr>
+<section>
+<div class="fBox">
+    <article>
+        <h3>Ein Hochkant</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt debitis veniam amet perferendis dolores ipsam sint est qui adipisci facilis labore quis, eligendi ab culpa, itaque in vitae aspernatur beatae nam doloremque odit quibusdam nisi quod cumque! Sint omnis dolor eum laudantium officia maxime assumenda natus explicabo atque, mollitia voluptate.
+        </p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptatibus nostrum quo molestiae, voluptatum earum? Molestiae exercitationem expedita necessitatibus? Deleniti temporibus neque recusandae cupiditate et laborum, nulla aspernatur eius ex labore, odio voluptatibus explicabo! Quisquam est nulla, saepe vitae unde ipsam cupiditate voluptates, ex ad eaque reprehenderit sed consequuntur quasi. Dignissimos eligendi perferendis mollitia ducimus vel consequuntur recusandae asperiores atque, accusamus deleniti quis provident blanditiis consequatur rerum aliquid placeat ad, quidem aperiam molestias inventore maiores enim ex qui. Velit beatae blanditiis rerum consequuntur ratione iure explicabo assumenda! Cupiditate perspiciatis similique eos. Unde ullam sint eaque impedit, ad necessitatibus cumque quos.</p>
+    </article>
+    <aside>
+        <figure>
+            <img src="/4edi/img/ps640.png" alt="">
+        </figure>
+    </aside>
+</div>
+</section>
     </main>
+    <footer>
+        <p>&copy; Andreas Breitwieser 2022</p>
+    </footer>
 </body>
 </html>
