@@ -1,0 +1,17 @@
+title:Dazed and amazed - Seiten zur Inspiration
+author: Andreas Breitwieser
+
+# DAZED AND AMAZED
+
+#### Seiten und Suchbegriffe zur Inspiration
+
+
+- [Layouts von Jen Simmons]()
+- [Vortrag von Casey Reas](https://www.youtube.com/watch?v=lu51j9V-ti0)
+- [Interview mit Thomas Bayrle](MAK im Dialog: Thomas Bayrle)
+- [Hansje von Halem](https://weareplaygrounds.nl/artist/hansje-van-halem/)
+- [Studio Dumbar](https://weareplaygrounds.nl/artist/studio-dumbar/)
+- [When Art and Analytics Overlap -  von Golan Levin](https://www.youtube.com/watch?v=T9EF35Cxvhc)
+- [Golan Levin: Material zur Loops Vorlesung](https://github.com/golanlevin/lectures/blob/master/lecture_loops/README.md)
+- [Golan Levin: Loop Templates](https://github.com/golanlevin/LoopTemplates)
+- [Golan Levin - QR Stenciler](https://github.com/golanlevin/QR_STENCILER)
