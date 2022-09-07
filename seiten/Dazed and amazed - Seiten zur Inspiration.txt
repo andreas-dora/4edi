@@ -15,3 +15,5 @@ author: Andreas Breitwieser
 - [Golan Levin: Material zur Loops Vorlesung](https://github.com/golanlevin/lectures/blob/master/lecture_loops/README.md)
 - [Golan Levin: Loop Templates](https://github.com/golanlevin/LoopTemplates)
 - [Golan Levin - QR Stenciler](https://github.com/golanlevin/QR_STENCILER)
+- [Lucas Fonts](https://www.lucasfonts.com/)
+- [DETI Keynote—Steven Heller & Gail Anderson: “Type Speaks”](https://www.youtube.com/watch?v=PsVNYHQpsMs)
